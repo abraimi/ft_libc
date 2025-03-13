@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_libc.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 02:48:02 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/13 02:58:45 by abraimi          ###   ########.fr       */
+/*   Updated: 2025/03/13 05:48:30 by bl4ckr0s33       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIBC_H
 #define FT_LIBC_H
 
-#include <sys/_types/_size_t.h>
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1
 #endif
