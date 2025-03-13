@@ -6,7 +6,7 @@
 /*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 02:48:02 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/13 06:15:33 by bl4ckr0s33       ###   ########.fr       */
+/*   Updated: 2025/03/13 06:21:02 by bl4ckr0s33       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,11 @@ typedef struct s_list
 # include <stdlib.h>
 # include <stdarg.h>
 
-
-char	*get_next_line(int fd);
-
-int		ft_printf(const char *s, ...);
-
-
-
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		strcmp(const char *s1, const char *s2);
+int		ft_printf(const char *s, ...);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -52,10 +47,11 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strrchr(const char *s, int c);
+char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
+char	*get_next_line(int fd);
 char	*ft_itoa(int n);
-char	**ft_split(const char *s, char c);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	*ft_memmove(void *dst, const void *src, size_t len);
