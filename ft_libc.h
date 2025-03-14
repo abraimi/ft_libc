@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_libc.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
+/*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 02:48:02 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/13 06:21:02 by bl4ckr0s33       ###   ########.fr       */
+/*   Updated: 2025/03/14 01:17:52 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FT_LIBC_H
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 1024
 #endif
 
 typedef struct s_list
@@ -28,8 +28,8 @@ typedef struct s_list
 # include <stdarg.h>
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_strcmp(const char *s1, const char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 int		strcmp(const char *s1, const char *s2);
 int		ft_printf(const char *s, ...);
 int		ft_atoi(const char *str);
@@ -57,20 +57,20 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_calloc(size_t count, size_t size);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_bzero(void *s, size_t n);
 void	ft_putnbr_fd(int n, int fd);
 
-void	ft_putchar_printf(char c, size_t *count);
-void	ft_putstr_printf(char *str, size_t *count);
-void	ft_putnbr_printf(long nbr, size_t *count);
-void	ft_putnbr_u_printf(unsigned int nbr, size_t *count);
 void	ft_printhex_printf(const char *base, size_t radix, size_t nbr, size_t *count);
 void	ft_printptr_printf(unsigned long ptr, size_t *count);
+void	ft_putnbr_u_printf(unsigned int nbr, size_t *count);
+void	ft_putstr_printf(char *str, size_t *count);
+void	ft_putnbr_printf(long nbr, size_t *count);
+void	ft_putchar_printf(char c, size_t *count);
 
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
