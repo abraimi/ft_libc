@@ -6,13 +6,13 @@
 /*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 06:10:57 by bl4ckr0s33        #+#    #+#             */
-/*   Updated: 2025/03/13 06:20:57 by bl4ckr0s33       ###   ########.fr       */
+/*   Updated: 2025/03/26 02:34:12 by bl4ckr0s33       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libc.h"
 
-int ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	if (!s1 || !s2)
 		return (0);

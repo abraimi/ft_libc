@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex_printf.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 07:40:39 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/13 02:58:00 by abraimi          ###   ########.fr       */
+/*   Updated: 2025/03/26 02:33:14 by bl4ckr0s33       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libc.h"
 
-void	ft_printhex_printf(const char *base, size_t radix, size_t nbr, size_t *count)
+void	ft_printhex_printf(const char *b, size_t r, size_t n, size_t *c)
 {
-	if (radix < 2 || radix > 16)
+	if (r < 2 || r > 16)
 		return ;
-	if (nbr >= radix)
-		ft_printhex_printf(base, radix, nbr / radix, count);
-	ft_putchar_printf(base[nbr % radix], count);
+	if (n >= r)
+		ft_printhex_printf(b, r, n / r, c);
+	ft_putchar_printf(b[n % r], c);
 }

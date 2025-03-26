@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 04:17:21 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/13 02:59:40 by abraimi          ###   ########.fr       */
+/*   Updated: 2025/03/26 02:39:19 by bl4ckr0s33       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ int	has_nl(char *s)
 
 char	*read_till_nl(int fd, char *buffer, char *vec)
 {
-	int	bytes_r;
-	char *tmp;
+	int		bytes_r;
+	char	*tmp;
 
-	while ((bytes_r = read(fd, buffer, BUFFER_SIZE)) > 0)
+	while (1)
 	{
+		bytes_r = read(fd, buffer, BUFFER_SIZE);
+		if (bytes_r <= 0)
+			break ;
 		buffer[bytes_r] = '\0';
 		if (!vec)
 		{
@@ -40,9 +43,7 @@ char	*read_till_nl(int fd, char *buffer, char *vec)
 		tmp = vec;
 		vec = ft_strjoin(vec, buffer);
 		free(tmp);
-		if (!vec)
-			break ;
-		if (has_nl(buffer))
+		if (!vec || has_nl(buffer))
 			break ;
 	}
 	if (bytes_r == -1)
@@ -77,7 +78,6 @@ char	*line_pull(char *vec)
 	return (line);
 }
 
-
 char	*line_push(char *vec)
 {
 	char	*new_vec;
@@ -106,7 +106,6 @@ char	*line_push(char *vec)
 	return (free(vec), new_vec);
 }
 
-
 char	*get_next_line(int fd)
 {
 	static char		*vec;
@@ -123,7 +122,7 @@ char	*get_next_line(int fd)
 		free(vec);
 	free(buffer);
 	if (!vec)
-		return ( NULL);
+		return (NULL);
 	line = line_pull(vec);
 	if (!line)
 		return (free(vec), vec = NULL, NULL);

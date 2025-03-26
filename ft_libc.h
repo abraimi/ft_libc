@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_libc.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 02:48:02 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/14 01:17:52 by abraimi          ###   ########.fr       */
+/*   Updated: 2025/03/26 02:35:40 by bl4ckr0s33       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIBC_H
-#define FT_LIBC_H
+# define FT_LIBC_H
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1024
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -65,17 +65,15 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_bzero(void *s, size_t n);
 void	ft_putnbr_fd(int n, int fd);
 
-void	ft_printhex_printf(const char *base, size_t radix, size_t nbr, size_t *count);
+void	ft_printhex_printf(const char *b, size_t r, size_t n, size_t *c);
 void	ft_printptr_printf(unsigned long ptr, size_t *count);
 void	ft_putnbr_u_printf(unsigned int nbr, size_t *count);
 void	ft_putstr_printf(char *str, size_t *count);
 void	ft_putnbr_printf(long nbr, size_t *count);
 void	ft_putchar_printf(char c, size_t *count);
 
-
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
-
 
 #endif

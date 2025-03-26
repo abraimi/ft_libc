@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bl4ckr0s33 <bl4ckr0s33@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 04:57:56 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/13 03:42:27 by abraimi          ###   ########.fr       */
+/*   Updated: 2025/03/26 02:33:50 by bl4ckr0s33       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ static void	ft_cases(char c, va_list args, size_t *count)
 	else if (c == 'i' || c == 'd')
 		ft_putnbr_printf(va_arg(args, int), count);
 	else if (c == 'x')
-		ft_printhex_printf("0123456789abcdef", 16, va_arg(args, unsigned int), count);
+		ft_printhex_printf("0123456789abcdef", 16,
+			va_arg(args, unsigned int), count);
 	else if (c == 'X')
-		ft_printhex_printf("0123456789ABCDEF", 16, va_arg(args, unsigned int), count);
+		ft_printhex_printf("0123456789ABCDEF", 16,
+			va_arg(args, unsigned int), count);
 	else if (c == 'p')
 		ft_printptr_printf(va_arg(args, unsigned long), count);
 	else if (c == 'u')
