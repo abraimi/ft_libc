@@ -6,11 +6,12 @@
 /*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 23:35:04 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/31 23:46:38 by abraimi          ###   ########.fr       */
+/*   Updated: 2025/04/02 03:25:16 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libc.h"
+#include <sys/_types/_ssize_t.h>
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -22,14 +23,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 }
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(ssize_t data)
 {
 	t_list	*newnode;
 
 	newnode = malloc(sizeof(t_list));
 	if (!newnode)
 		return (NULL);
-	newnode->data = content;
+	newnode->data = data;
 	newnode->next = NULL;
 	return (newnode);
 }

@@ -6,7 +6,7 @@
 /*   By: abraimi <abraimi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 02:48:02 by abraimi           #+#    #+#             */
-/*   Updated: 2025/03/31 23:46:15 by abraimi          ###   ########.fr       */
+/*   Updated: 2025/04/02 03:26:01 by abraimi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 typedef struct s_list
 {
-	void			*data;
+	ssize_t			data;
 	struct s_list	*next;
 }	t_list;
 
@@ -31,7 +31,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst);
 int		ft_lstsize(t_list *lst);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(ssize_t data);
 t_list	*ft_lstlast(t_list *lst);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
